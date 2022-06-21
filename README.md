@@ -11,7 +11,7 @@ DataGrid is used to display data in scrollable grid. It requires data source to 
 ## About this exercise
 
 **Backend Code Base:**
-Previously we developed a base structure of an api solution in asp.net core that have just two api functions GetLast12MonthBalances & GetLast12MonthBalances/{userId} which returns data of the last 12 months total balances.
+Previously we developed a base structure of an api solution in asp.net core that have just two api functions `GetLast12MonthBalances` & `GetLast12MonthBalances/{userId}` which returns data of the last 12 months total balances.
 
  ![1](https://user-images.githubusercontent.com/100709775/174861820-11a39314-f8ea-42d0-90cd-e7f6a74d8c68.jpg)
 
@@ -33,8 +33,8 @@ For more details about this base project see: [Service Oriented Architecture Lab
 
 Previously, we scaffolded a new Angular application in which we have
 
-* FontAwesome library for icons
-* Bootstrap library for styling
+* FontAwesome library for icons.
+* Bootstrap library for styling.
 
 
 
