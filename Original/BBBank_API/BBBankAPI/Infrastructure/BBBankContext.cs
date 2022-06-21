@@ -17,9 +17,15 @@ namespace Infrastructure
                 FirstName = "Raas",
                 LastName = "Masood",
                 Email = "rassmasood@hotmail.com",
-                ProfilePicUrl = "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/lady.jpg"
+                ProfilePicUrl = "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/lady.jpg",
+                PhoneNumber = "0998877665"
             });
 
+            // initializing 24 new fake users. 
+            for (int i = 1; i < 25; i++)
+            {
+                this.Users.Add(new User { Id = i.ToString(), FirstName = "Fake", LastName = "Fake", Email = "fake@fake.com", PhoneNumber = i.ToString() + "998877665", ProfilePicUrl = "https://images.freeimages.com/images/premium/previews/1670/16703169-disgusted-lounge-singer.jpg" });
+            }
             // creating the collection for account list
             this.Accounts = new List<Account>();
 
@@ -33,6 +39,12 @@ namespace Infrastructure
                 AccountStatus = AccountStatus.Active,
                 User = this.Users[0]
             });
+
+            // initializing 24 new fake accounts.
+            for (int i = 1; i < 25; i++)
+            {
+                this.Accounts.Add(new Account { UserId = i.ToString(), Id = Guid.NewGuid().ToString(), AccountNumber = i.ToString() + "-xxx-xxx", AccountStatus = AccountStatus.InActive, CurrentBalance = i * 100, AccountTitle = "Fake Account " + i.ToString(),User= this.Users[i] });
+            }
 
             // creating the collection for transaction list
             this.Transactions = new List<Transaction>();

@@ -22,5 +22,7 @@ namespace Entities
 
         // Account attached to the user 
         public Account Account { get; set; }
+
+        public string PhoneNumber { get; set; }
     }
 }

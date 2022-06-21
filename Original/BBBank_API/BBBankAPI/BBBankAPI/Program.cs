@@ -22,7 +22,9 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddControllers();
 
+
 builder.Services.AddScoped<ITransactionService, TransactionService>();
+builder.Services.AddScoped<IAccountsService, AccountService>();
 builder.Services.AddSingleton<BBBankContext>();
 var app = builder.Build();
 
