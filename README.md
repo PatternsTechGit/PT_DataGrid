@@ -772,8 +772,10 @@ mat-paginator {
 ```
 
 
+## Final Output
 
 Run the application and see its working.
 
-![DataGrid](https://user-images.githubusercontent.com/100709775/175351262-289c4117-55e7-4193-b44e-cfd9f4998a4c.gif)
+![DataGrid Updated video](https://user-images.githubusercontent.com/100709775/176945677-467a14c3-28ca-42f4-8a17-8f0d6ab1ebc5.gif)
+
 
