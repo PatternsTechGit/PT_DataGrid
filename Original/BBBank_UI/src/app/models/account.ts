@@ -8,7 +8,7 @@ export class AccountListsResponse {
     accountTitle: string;
     user: User;
     currentBalance: number;
-    accountStatus: number;
+    accountStatus: string;
     accountNumber: string;
   }
   export class User {
