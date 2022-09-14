@@ -95,10 +95,10 @@ export class AppComponent implements OnInit {
     const filteredData = this.accounts.filter(x => x.accountTitle.includes(filterValue) ||
       x.currentBalance.toString().includes(filterValue) ||
       x.user.email.includes(filterValue) ||
-      x.user.phoneNumber.includes(filterValue) ||
+      x.user.phoneNumber?.includes(filterValue) ||
       x.accountNumber.includes(filterValue))
     // initializing the datastore with filtered data.\
-    console.log(filteredData);
+   // console.log(filteredData);
     this.dataSource = new MatTableDataSource(filteredData);
   }
 
