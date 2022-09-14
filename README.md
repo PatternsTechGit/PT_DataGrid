@@ -112,7 +112,13 @@ Also we will add a new property `PhoneNumber` in `User` class as below
 ```cs
 public string PhoneNumber { get; set; }
 ```
- 
+And will add a new property `UserId` as a foreign key in `Account` class as below 
+
+```cs
+[ForeignKey("UserId")]
+public string UserId { get; set; }
+```
+
  ## Step 4 : Implement IAccountsService
 
 We will create `AccountService` class in Services project, which will implement the `IAccountsService` interface which will return the required account related information as below :
@@ -201,14 +207,23 @@ Run the project and see its working as below :
 ![AccountDetails](https://user-images.githubusercontent.com/100709775/174651287-8d6a252e-358c-4d6a-864b-838b908757cf.PNG)
 
 
-
-
-
 # Client Side Implementation 
 
-First we will install Angular Material in our BBankUI, to see how it's installed see : https://github.com/PatternsTechGit/PT_Angular-Materials-Side
+## Step 1 : Install Angular Material
 
-## Step 1 : Setup Account Service.
+First we will install Angular Material in our BBankUI.
+
+Use the Angular CLI's installation schematic to set up your Angular Material project by running the following command:
+
+```ng
+ng add @angular/material@13.3.9
+```
+- press 'y' to confirm.
+- Select indigo pink theme.
+- Select 'y' for typography.
+- press 'y' for browser animation.
+
+## Step 2 : Setup Account Service.
 
 Create a new file `accounts.service.ts` in services folder which will contain the `getAllAccountsPaginated` method which will call the API method to retrieve the required accounts information as below :
 
@@ -221,7 +236,7 @@ export default class AccountsService {
   }
 }
 ```
-## Step 2 : Setup AccountResponse.
+## Step 3 : Setup AccountResponse.
 
 Create a new file `account.ts` in models folder which will contain the `AccountListsResponse` class which has account property of `Accounts` class and `resultCount` property as number. Further `Accounts` class contains user property which is object of `user` class 
 
@@ -246,7 +261,7 @@ export class User {
 
 ```
 
-## Step 3 : Create Environment Variable  
+## Step 4 : Create Environment Variable  
 
 Go to `environment.ts` and create a new `gridDefaultPageSize` object with default value 10 as below :
 
@@ -258,7 +273,7 @@ export const environment = {
 };
 ```
 
-## Step 4 : Import Modules
+## Step 5 : Import Modules
 Go to `app.module.ts` and import `MatTableModule` `MatSortModule` `MatPaginatorModule` and `BrowserAnimationsModule` modules as below :
 
 ```ts
@@ -274,7 +289,7 @@ Go to `app.module.ts` and import `MatTableModule` `MatSortModule` `MatPaginatorM
   ],
 ```
 
-## Step 5 : Implement Mat-Table
+## Step 6 : Implement Mat-Table
 
 Go to `app.component.ts` and create an instance of `AccountsService` in constructor. Create a method `loadAccounts` that will called on `ngOnInit()` to get accounts information. Further we will subscribe  `paginator.page` on `ngAfterViewInit()` which will automatically emits pagination values like page number.
 
@@ -363,7 +378,7 @@ export class AppComponent implements OnInit {
 
 
 
-## Step 6 : Configure Mat-Table
+## Step 7 : Configure Mat-Table
 Go to `app.component.html` and create mat-table which provides a Material Design styled data-table that can be used to display rows of data. along with this we will create a textbox for searching and filtering. 
 
 The mat table contains multiple [Features](https://material.angular.io/components/table/api) as below :
@@ -483,7 +498,7 @@ We will create the grid using mat table as below :
 </div>
 ```
 
-## Step 7 : Implement Searching/Filtering
+## Step 8 : Implement Searching/Filtering
 We will create `applyFilter`function which will be triggered on `(keyup)` event of textbox for filtering the records. This function will be using 
 `accounts` object for filtering and then set the filtered result back to `dataSource` object.
 
@@ -516,7 +531,7 @@ Go to `app.component.ts` and create a function `applyFilter` as below :
 
 
 
-## Step 8 : Configure Css Styles 
+## Step 9 : Configure Css Styles 
 Go to `app.component.css` and add the following `css` for styling.
 
 ```css
