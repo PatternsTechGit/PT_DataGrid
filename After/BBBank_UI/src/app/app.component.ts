@@ -92,7 +92,7 @@ export class AppComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     // filtering each property of object array based on filter criteria. 
     // each time data is to be filtered is picked from this.accounts because it has original copy if data returned form teh server
-    const filteredData = this.accounts.filter(x => x.accountTitle.includes(filterValue) ||
+    const filteredData = this.accounts.filter(x => x.accountTitle.toLowerCase().includes(filterValue.toLowerCase()) ||
       x.currentBalance.toString().includes(filterValue) ||
       x.user.email.includes(filterValue) ||
       x.user.phoneNumber?.includes(filterValue) ||
